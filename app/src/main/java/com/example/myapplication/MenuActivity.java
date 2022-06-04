@@ -28,7 +28,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void buttonHacerQuestion(android.view.View v) {
 
-        Intent intent = new Intent(this, Examen2Activity.class);
+        Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
     }
 

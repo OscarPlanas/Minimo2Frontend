@@ -22,7 +22,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Examen2Activity extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
 
     EditText date;
     EditText title;
@@ -33,7 +33,7 @@ public class Examen2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_examen2);
+        setContentView(R.layout.activity_question);
 
         date = findViewById(R.id.editDate);
         title = findViewById(R.id.editTitle);
@@ -44,7 +44,7 @@ public class Examen2Activity extends AppCompatActivity {
 
     public void buttonQuestion(android.view.View v) {
         if (date.getText().toString().isEmpty() || title.getText().toString().isEmpty() || message.getText().toString().isEmpty() || sender.getText().toString().isEmpty()) {
-            Toast.makeText(Examen2Activity.this, "Please enter all the values", Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuestionActivity.this, "Please enter all the values", Toast.LENGTH_SHORT).show();
 
             return;
         }
@@ -77,10 +77,10 @@ public class Examen2Activity extends AppCompatActivity {
 
                     Log.i("Pregunta", "OK" + question);
 
-                    Toast.makeText(Examen2Activity.this, "Pregunta enviada correctamente", Toast.LENGTH_LONG).show();
+                    Toast.makeText(QuestionActivity.this, "Pregunta enviada correctamente", Toast.LENGTH_LONG).show();
 
                 } else {
-                    Toast.makeText(Examen2Activity.this, "Parametros incorrectos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(QuestionActivity.this, "Parametros incorrectos", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -88,7 +88,7 @@ public class Examen2Activity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Question> call, Throwable t) {
                 Log.e("LOGIN", "ERROR", t);
-                Toast.makeText(Examen2Activity.this, "Usuario y/o password incorrectas", Toast.LENGTH_LONG).show();
+                Toast.makeText(QuestionActivity.this, "Usuario y/o password incorrectas", Toast.LENGTH_LONG).show();
             }
         });
     }
